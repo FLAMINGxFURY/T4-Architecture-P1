@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace InstructionSetSimulation.Core.Registers
 {
-	public class S3 : Register
+	public class PC : Register
 	{
-		public S3() : base()
+		public PC() : base()
 		{
-			ID = 12;
+			ID = 6;
 		}
 	}
 }
