@@ -7,41 +7,16 @@ namespace InstructionSetSimulation.Core
 {
     public class CPU
     {
-        public static CPU Instance { get; private set; }
-        public static byte[] Memory { get; set; }
+        public byte[] Memory { get; set; } = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
 
-        public static Reader Rd;
+        public Reader Rd;
 
-        private static Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
+        private Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
 
-        private static Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
-
-        //This is an example Destin came up with, I've edited it to fit our reader having the PC
-        public void Run()
-        {
-            var opcode = BitConverter.ToUInt16(new[] { Memory[Rd.PC], Memory[++Rd.PC] });
-
-            var operand = _operations[opcode];
-
-            var operandCount = operand.OperandCount;
-
-            var operands = new ushort[operandCount];
-            for (var i = 0; i < operandCount; i++)
-            {
-                var op = BitConverter.ToUInt16(new [] { Memory[++Rd.PC], Memory[++Rd.PC] });
-                operands[i] = op;
-            }
-
-            operand.Execute(operands);
-        }
-
-        public static void Init()
-        {
-            Instance = new CPU();
+        private Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
+        public CPU() {
 
             Rd = Reader.GetInstance();
-
-            Memory = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
 
             //add all of the registers to the dictionary on initialization
             _registers.Add(1, new AX());
@@ -69,6 +44,25 @@ namespace InstructionSetSimulation.Core
             _operations.Add(13, new JNE());
             _operations.Add(14, new JEQ());
             _operations.Add(15, new END());
+        }
+
+        //This is an example Destin came up with, I've edited it to fit our reader having the PC
+        public void Run()
+        {
+            var opcode = BitConverter.ToUInt16(new[] { Memory[Rd.PC], Memory[++Rd.PC] });
+
+            var operand = _operations[opcode];
+
+            var operandCount = operand.OperandCount;
+
+            var operands = new ushort[operandCount];
+            for (var i = 0; i < operandCount; i++)
+            {
+                var op = BitConverter.ToUInt16(new [] { Memory[++Rd.PC], Memory[++Rd.PC] });
+                operands[i] = op;
+            }
+
+            operand.Execute(operands);
         }
     }
 }

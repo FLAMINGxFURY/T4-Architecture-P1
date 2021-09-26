@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,16 @@ namespace InstructionSetSimulation.Core {
     public class Reader {
         private static Reader _instance = null;
         private static Object _syncLock = new Object();
-        public ushort PC = 0;           //Program Counter
-        private ushort currentWord = 0; //current data in reader
+        public ushort PC;           //Program Counter
+        private ushort currentWord; //current data in reader
+        private BinaryReader fileIn;
 
         private Reader() {
-            //Private constructor is attribute of Singletons, idk if we need anything in here yet
-		}
+            PC = 0;
+            currentWord = 0;
+            fileIn = new BinaryReader(File.Open("./test.bin", FileMode.Open));
+
+        }
 
         public static Reader GetInstance() {
             lock(_syncLock) {
