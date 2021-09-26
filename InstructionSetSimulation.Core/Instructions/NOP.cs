@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace InstructionSetSimulation.Core.Instructions
 {
-    public class NOP : Instruction
-    {
-        public override int OpCode => 0x00;
-        public override int OperandCount => 0;
+	public class NOP : Instruction
+	{
+		public override int OpCode => 0x00;
+		public override int OperandCount => 0;
 
-        public override void Execute(params ushort[] operands)
-        {
+		public override void Execute(params ushort[] operands)
+		{
 
-        }
-    }
+		}
+	}
 }
