@@ -36,5 +36,20 @@ namespace InstructionSetSimulation.Core {
 			return ret;
 		}
 
+		public void ParseNextOp() {
+			//grab next 16 bits
+			ushort next = GetNextWord();
+
+			//determine opcode
+			ushort op = (ushort)(next >> 11);
+
+			//split out remainder
+			ushort remainder = (ushort)(0b_0000_0111_1111_1111 & next); //bit mask for removing opcode
+
+			//testing only remove after use
+			Console.WriteLine("Op: " + op + "   Rem: " + remainder);
+
+		}
+
 	}
 }
