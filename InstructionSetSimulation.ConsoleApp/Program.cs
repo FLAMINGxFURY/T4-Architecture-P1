@@ -1,4 +1,5 @@
 ﻿using InstructionSetSimulation.Core;
+using System;
 
 namespace InstructionSetSimulation.ConsoleApp
 {
@@ -7,6 +8,8 @@ namespace InstructionSetSimulation.ConsoleApp
         private static void Main(string[] args)
         {
             CPU cpu = new CPU();
+
+            Console.WriteLine(cpu.Rd.GetNextWord());
 
             // Load 0x0001 (MOVI)
             cpu.Memory[0] = 0x01;

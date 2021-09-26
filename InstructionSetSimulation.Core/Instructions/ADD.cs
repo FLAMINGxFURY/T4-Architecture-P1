@@ -8,10 +8,7 @@ namespace InstructionSetSimulation.Core.Instructions
 
         public override void Execute(params ushort[] operands)
         {
-            var register1 = operands[0]; //the register containing the value to add to
-            var register2 = operands[1]; //the register containing the value being added
-
-            CPU.Instance.SetRegister(register1, register2);
+            
         }
     }
 }

@@ -16,7 +16,7 @@ namespace InstructionSetSimulation.Core {
         private Reader() {
             PC = 0;
             currentWord = 0;
-            fileIn = new BinaryReader(File.Open("./test.bin", FileMode.Open));
+            fileIn = new BinaryReader(File.Open("../../../../test.bin", FileMode.Open)); //for now we edit the filename here and have no way to select it.
 
         }
 
@@ -29,12 +29,9 @@ namespace InstructionSetSimulation.Core {
 			}
 		}
 
-        //TODO: Implement reader here for a file - probably need more attributes up top to accomplish this
         public ushort GetNextWord() {
 
-            ushort ret = 0;
-            
-            //TODO: Reader here
+            ushort ret = fileIn.ReadUInt16();
 
             return ret;
 		}
