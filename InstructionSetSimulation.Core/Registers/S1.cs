@@ -10,7 +10,7 @@ namespace InstructionSetSimulation.Core.Registers
 	{
 		public S1() : base()
 		{
-			ID = 10;
+			ID = 8;
 		}
 	}
 }
