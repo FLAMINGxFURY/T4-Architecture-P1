@@ -8,23 +8,18 @@ namespace InstructionSetSimulation.Core
     public class CPU
     {
         public static CPU Instance { get; private set; }
-        //TODO: remove all registers here. PC has been moved to reader. Other registers have been put in a dictionary.
-        public ushort PC { get; private set; }
-        public ushort AX { get; private set; }
-        public ushort BX { get; private set; }
-        public ushort CX { get; private set; }
-        public ushort DX { get; private set; }
-        public byte[] Memory { get; set; } = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
+        public static byte[] Memory { get; set; }
 
-        //TODO: add all
+        public static Reader Rd;
+
         private static Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
 
-        // TODO: This could be cached beforehand using reflection and the OpCode property on instructions
         private static Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
 
+        //This is an example Destin came up with, I've edited it to fit our reader having the PC
         public void Run()
         {
-            var opcode = BitConverter.ToUInt16(new[] { Memory[PC], Memory[++PC] });
+            var opcode = BitConverter.ToUInt16(new[] { Memory[Rd.PC], Memory[++Rd.PC] });
 
             var operand = _operations[opcode];
 
@@ -33,37 +28,20 @@ namespace InstructionSetSimulation.Core
             var operands = new ushort[operandCount];
             for (var i = 0; i < operandCount; i++)
             {
-                var op = BitConverter.ToUInt16(new [] { Memory[++PC], Memory[++PC] });
+                var op = BitConverter.ToUInt16(new [] { Memory[++Rd.PC], Memory[++Rd.PC] });
                 operands[i] = op;
             }
 
             operand.Execute(operands);
         }
 
-        public void SetRegister(ushort code, ushort value)
-        {
-            switch (code)
-            {
-                case 0:
-                    AX = value;
-                    break;
-                case 1:
-                    BX = value;
-                    break;
-                case 2:
-                    CX = value;
-                    break;
-                case 3:
-                    DX = value;
-                    break;
-                default:
-                    throw new ArgumentException($"'{code}' is an invalid register value.");
-            }
-        }
-
         public static void Init()
         {
             Instance = new CPU();
+
+            Rd = Reader.GetInstance();
+
+            Memory = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
 
             //add all of the registers to the dictionary on initialization
             _registers.Add(1, new AX());
