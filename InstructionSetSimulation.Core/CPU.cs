@@ -76,7 +76,21 @@ namespace InstructionSetSimulation.Core
             _registers.Add(8, new S1());
 
             //add all of the operations to the dictionary on initialization
-            _operations.Add(1, new MOVI());
+            _operations.Add(1, new NOP());
+            _operations.Add(2, new MOVI());
+            _operations.Add(3, new MOVM());
+            _operations.Add(4, new MOVO());
+            _operations.Add(5, new ADDI());
+            _operations.Add(6, new ADDM());
+            _operations.Add(7, new ADD());
+            _operations.Add(8, new SUBI());
+            _operations.Add(9, new SUBM());
+            _operations.Add(10, new SUB());
+            _operations.Add(11, new CMP());
+            _operations.Add(12, new JMP());
+            _operations.Add(13, new JNE());
+            _operations.Add(14, new JEQ());
+            _operations.Add(15, new END());
         }
     }
 }
