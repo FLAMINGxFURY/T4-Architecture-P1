@@ -9,7 +9,6 @@ namespace InstructionSetSimulation.ConsoleApp
 		{
 			CPU cpu = CPU.GetInstance();
 
-			//pattern for 
 			cpu.Rd.ParseNextOp();
 
 			//Destin example
