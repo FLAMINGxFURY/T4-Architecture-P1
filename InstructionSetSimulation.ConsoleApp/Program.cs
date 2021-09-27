@@ -7,10 +7,9 @@ namespace InstructionSetSimulation.ConsoleApp
 	{
 		private static void Main(string[] args)
 		{
-			CPU cpu = new CPU();
+			CPU cpu = CPU.GetInstance();
 
-			Console.WriteLine(cpu.Rd.GetNextWord());
-
+			//pattern for 
 			cpu.Rd.ParseNextOp();
 
 			//Destin example

@@ -7,6 +7,9 @@ namespace InstructionSetSimulation.Core
 {
 	public class CPU
 	{
+		private static CPU _instance = null;
+		private static Object _syncLock = new Object();
+
 		public byte[] Memory { get; set; } = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
 
 		public Reader Rd;
@@ -14,7 +17,7 @@ namespace InstructionSetSimulation.Core
 		private Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
 
 		private Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
-		public CPU() {
+		private CPU() {
 
 			Rd = Reader.GetInstance();
 
@@ -44,6 +47,15 @@ namespace InstructionSetSimulation.Core
 			_operations.Add(13, new JNE());
 			_operations.Add(14, new JEQ());
 			_operations.Add(15, new END());
+		}
+
+		public static CPU GetInstance() {
+			lock (_syncLock) {
+				if (_instance == null) {
+					return new CPU();
+				}
+				return _instance;
+			}
 		}
 
 		//This is an example Destin came up with, I've edited it to fit our reader having the PC

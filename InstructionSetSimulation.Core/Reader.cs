@@ -12,12 +12,14 @@ namespace InstructionSetSimulation.Core {
 		public ushort PC;           //Program Counter
 		private ushort currentWord; //current data in reader
 		private BinaryReader fileIn;
+		private CPU cpu;
 
 		private Reader() {
 			PC = 0;
 			currentWord = 0;
 			fileIn = new BinaryReader(File.Open("../../../../test.bin", FileMode.Open)); //for now we edit the filename here and have no way to select it.
 																						 //The directory is the same as the .sln file
+			cpu = CPU.GetInstance();
 		}
 
 		public static Reader GetInstance() {
@@ -46,8 +48,8 @@ namespace InstructionSetSimulation.Core {
 			//split out remainder
 			ushort remainder = (ushort)(0b_0000_0111_1111_1111 & next); //bit mask for removing opcode
 
-			//testing only remove after use
-			Console.WriteLine("Op: " + op + "   Rem: " + remainder);
+			//pass off to instruction
+
 
 		}
 
