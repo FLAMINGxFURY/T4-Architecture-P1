@@ -49,6 +49,9 @@ namespace InstructionSetSimulation.Core {
 			ushort remainder = (ushort)(0b_0000_0111_1111_1111 & next); //bit mask for removing opcode
 
 			//pass off to instruction
+			switch(op) {
+
+			}
 
 
 		}
