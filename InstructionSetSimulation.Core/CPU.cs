@@ -7,7 +7,7 @@ namespace InstructionSetSimulation.Core
 {
 	public class CPU
 	{
-		private static CPU _instance = null;
+		private static CPU _instance;
 		private static Object _syncLock = new Object();
 
 		public byte[] Memory { get; set; } = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
@@ -16,10 +16,15 @@ namespace InstructionSetSimulation.Core
 
 		private Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
 
-		private Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
+		public Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
+
+		private bool endReached;
+
 		private CPU() {
 
-			Rd = Reader.GetInstance();
+			Rd = new Reader();
+
+			endReached = false;
 
 			//add all of the registers to the dictionary on initialization
 			_registers.Add(1, new AX());
@@ -36,45 +41,41 @@ namespace InstructionSetSimulation.Core
 			_operations.Add(2, new MOVI());
 			_operations.Add(3, new MOVM());
 			_operations.Add(4, new MOVO());
-			_operations.Add(5, new ADDI());
-			_operations.Add(6, new ADDM());
-			_operations.Add(7, new ADD());
-			_operations.Add(8, new SUBI());
-			_operations.Add(9, new SUBM());
-			_operations.Add(10, new SUB());
-			_operations.Add(11, new CMP());
-			_operations.Add(12, new JMP());
-			_operations.Add(13, new JNE());
-			_operations.Add(14, new JEQ());
-			_operations.Add(15, new END());
+			_operations.Add(5, new MOV());
+			_operations.Add(6, new ADDI());
+			_operations.Add(7, new ADDM());
+			_operations.Add(8, new ADD());
+			_operations.Add(9, new SUBI());
+			_operations.Add(10, new SUBM());
+			_operations.Add(11, new SUB());
+			_operations.Add(12, new CMP());
+			_operations.Add(13, new JMP());
+			_operations.Add(14, new JNE());
+			_operations.Add(15, new JEQ());
+			_operations.Add(31, new END());
 		}
 
 		public static CPU GetInstance() {
-			lock (_syncLock) {
-				if (_instance == null) {
-					return new CPU();
+			if (_instance == null) {
+				lock (_syncLock) {
+					if (_instance == null) {
+						_instance = new CPU();
+					}
 				}
-				return _instance;
-			}
+			}			
+			return _instance;						
 		}
 
-		//This is an example Destin came up with, I've edited it to fit our reader having the PC
-		public void Run()
-		{
-			var opcode = BitConverter.ToUInt16(new[] { Memory[Rd.PC], Memory[++Rd.PC] });
+		public bool ParseNextOp() {
+			Rd.ParseNextOp();
 
-			var operand = _operations[opcode];
+			return endReached;
 
-			var operandCount = operand.OperandCount;
-
-			var operands = new ushort[operandCount];
-			for (var i = 0; i < operandCount; i++)
-			{
-				var op = BitConverter.ToUInt16(new [] { Memory[++Rd.PC], Memory[++Rd.PC] });
-				operands[i] = op;
-			}
-
-			operand.Execute(operands);
 		}
+
+		public void End() {
+			endReached = true;
+		}
+
 	}
 }

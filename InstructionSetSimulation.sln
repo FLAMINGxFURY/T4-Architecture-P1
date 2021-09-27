@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstructionSetSimulation.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstructionSetSimulation.WinFormsApp", "InstructionSetSimulation.WinFormsApp\InstructionSetSimulation.WinFormsApp.csproj", "{DFE35D2C-1EA6-4C40-97BE-9D8E7732AD07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstructionSetSimulation.ConsoleApp", "InstructionSetSimulation.ConsoleApp\InstructionSetSimulation.ConsoleApp.csproj", "{225077EF-167C-4932-9CD2-DE52C2445DC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstructionSetSimulation.ConsoleApp", "InstructionSetSimulation.ConsoleApp\InstructionSetSimulation.ConsoleApp.csproj", "{225077EF-167C-4932-9CD2-DE52C2445DC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4FAD8082-03CF-40D4-9CB4-6A1374B16E8E}"
+	ProjectSection(SolutionItems) = preProject
+		test.bin = test.bin
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
