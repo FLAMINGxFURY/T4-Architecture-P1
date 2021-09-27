@@ -8,9 +8,6 @@ namespace InstructionSetSimulation.Core.Registers
 {
 	public class PC : Register
 	{
-		public PC() : base()
-		{
-			ID = 6;
-		}
+		public override ushort ID => 0x06;
 	}
 }

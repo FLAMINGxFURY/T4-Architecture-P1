@@ -8,9 +8,6 @@ namespace InstructionSetSimulation.Core.Registers
 {
 	public class BX : Register
 	{
-		public BX() : base()
-		{
-			ID = 2;
-		}
+		public override ushort ID => 0x02;
 	}
 }

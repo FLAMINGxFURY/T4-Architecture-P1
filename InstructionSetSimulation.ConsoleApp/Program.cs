@@ -12,7 +12,7 @@ namespace InstructionSetSimulation.ConsoleApp
 			bool end = false;
 
 			//now make this a loop with a condition based on end
-			end = cpu.ParseNextOp();
+			while (!cpu.ParseNextOp());
 
 			//Destin example
 

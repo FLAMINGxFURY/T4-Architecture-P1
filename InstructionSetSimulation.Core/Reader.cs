@@ -23,7 +23,7 @@ namespace InstructionSetSimulation.Core {
 
 		public ushort GetNextWord() {
 
-			ushort ret = fileIn.ReadUInt16();
+			var ret = fileIn.ReadUInt16();
 
 			return ret;
 		}
@@ -33,10 +33,10 @@ namespace InstructionSetSimulation.Core {
 			ushort next = GetNextWord();
 
 			//determine opcode
-			ushort op = (ushort)(next >> 11);
+			ushort op = (ushort)(next >> 12);
 
 			//split out remainder
-			ushort remainder = (ushort)(0b_0000_0111_1111_1111 & next); //bit mask for removing opcode
+			ushort remainder = (ushort)(0b_0000_1111_1111_1111 & next); //bit mask for removing opcode
 
 			//pass off to instruction
 			cpu._operations[op].Execute(remainder);

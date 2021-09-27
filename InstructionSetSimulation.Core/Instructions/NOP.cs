@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace InstructionSetSimulation.Core.Instructions
 {
 	public class NOP : Instruction {
-		public override int OpCode => 0x00;
+		public override ushort OpCode => 0x00;
 
 		public NOP(CPU cpuref) : base(cpuref) {
 

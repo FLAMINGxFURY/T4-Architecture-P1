@@ -1,16 +1,24 @@
-﻿
+﻿using System;
+
 namespace InstructionSetSimulation.Core.Instructions
 {
 	public class MOVM : Instruction
 	{
-		public override int OpCode => 0x02;
+		public override ushort OpCode => 0x02;
 
 		public MOVM(CPU cpuref) : base(cpuref) {
 
 		}
 
 		public override void Execute(ushort operand) {
+			// reg contains memory location
+			var reg = cpu.GetRegister(GetRegister1Code(operand));
 
+			// get memory address
+			var address = GetData(operand);
+
+			// Move short at address into register
+			reg.Data = BitConverter.ToUInt16(new[] { cpu.Memory[address + 1], cpu.Memory[address] });
 		}
 	}
 }

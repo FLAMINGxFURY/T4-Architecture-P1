@@ -4,7 +4,7 @@ namespace InstructionSetSimulation.Core.Instructions
 {
 	public class END : Instruction
 	{
-		public override int OpCode => 0x1F;
+		public override ushort OpCode => 0x1F;
 
 		public END(CPU cpuref) : base(cpuref) {
 

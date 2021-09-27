@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace InstructionSetSimulation.Core.Registers
 {
-	public class AX : Register
-	{
-		public AX() : base()
-		{
-			ID = 1;
-		}
-	}
+    public class AX : Register
+    {
+        public override ushort ID => 0x01;
+    }
 }

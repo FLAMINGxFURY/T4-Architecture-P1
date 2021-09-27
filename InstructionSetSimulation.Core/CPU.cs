@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections.Generic;
 using InstructionSetSimulation.Core.Instructions;
 using InstructionSetSimulation.Core.Registers;
@@ -11,11 +12,16 @@ namespace InstructionSetSimulation.Core
 
 		public Reader Rd;
 
+
 		private Dictionary<ushort, Register> _registers = new Dictionary<ushort, Register>();
 
 		public Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
 
 		private bool endReached;
+
+		public EFlags EFlags { get; } = new EFlags();
+
+		public Register PC => _registers[0x06];
 
 		public CPU() {
 
@@ -23,34 +29,27 @@ namespace InstructionSetSimulation.Core
 
 			endReached = false;
 
-			//add all of the registers to the dictionary on initialization
-			_registers.Add(1, new AX());
-			_registers.Add(2, new BX());
-			_registers.Add(3, new CX());
-			_registers.Add(4, new DX());
-			_registers.Add(5, new SX());
-			_registers.Add(6, new PC());
-			_registers.Add(7, new S0());
-			_registers.Add(8, new S1());
+			//add all instructions and registers to dictionaries
+			foreach (var type in Assembly.GetExecutingAssembly().GetTypes())
+            {
+				if (type.BaseType == typeof(Register))
+                {
+					var reg = (Register)Activator.CreateInstance(type);
+					_registers.Add(reg.ID, reg);
+                }
 
-			//add all of the operations to the dictionary on initialization
-			_operations.Add(1, new NOP(this));
-			_operations.Add(2, new MOVI(this));
-			_operations.Add(3, new MOVM(this));
-			_operations.Add(4, new MOVO(this));
-			_operations.Add(5, new MOV(this));
-			_operations.Add(6, new ADDI(this));
-			_operations.Add(7, new ADDM(this));
-			_operations.Add(8, new ADD(this));
-			_operations.Add(9, new SUBI(this));
-			_operations.Add(10, new SUBM(this));
-			_operations.Add(11, new SUB(this));
-			_operations.Add(12, new CMP(this));
-			_operations.Add(13, new JMP(this));
-			_operations.Add(14, new JNE(this));
-			_operations.Add(15, new JEQ(this));
-			_operations.Add(31, new END(this));
+				if (type.BaseType == typeof(Instruction))
+                {
+					var instruction = (Instruction)Activator.CreateInstance(type, this);
+					_operations.Add(instruction.OpCode, instruction);
+                }
+            }
 		}
+
+		public Register GetRegister(ushort id)
+        {
+			return _registers[id];
+        }
 
 		public bool ParseNextOp() {
 			Rd.ParseNextOp();
