@@ -22,7 +22,7 @@ namespace InstructionSetSimulation.Core
 
 		private CPU() {
 
-			Rd = new Reader();
+			Rd = new Reader(_instance);
 
 			endReached = false;
 
