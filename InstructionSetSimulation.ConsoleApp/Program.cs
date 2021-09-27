@@ -7,7 +7,7 @@ namespace InstructionSetSimulation.ConsoleApp
 	{
 		private static void Main(string[] args)
 		{
-			CPU cpu = CPU.GetInstance();
+			CPU cpu = new CPU();
 
 			bool end = false;
 

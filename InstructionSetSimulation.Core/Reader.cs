@@ -15,7 +15,6 @@ namespace InstructionSetSimulation.Core {
 		public Reader(CPU cpuref) {
 			PC = 0;
 			currentWord = 0;
-			Console.WriteLine("here");
 			fileIn = new BinaryReader(File.Open("../../../../test.bin", FileMode.Open)); //for now we edit the filename here and have no way to select it.
 																						 //The directory is the same as the .sln file
 																						 //Later we can have this come from a file select screen, need a var for that

@@ -5,6 +5,11 @@ namespace InstructionSetSimulation.Core.Instructions
 	{
 		public override int OpCode => 0x09;
 
+		public SUBM(CPU cpuref) : base(cpuref) {
+
+		}
+
+
 		public override void Execute(ushort operand) {
 
 		}

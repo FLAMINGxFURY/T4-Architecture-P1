@@ -7,9 +7,6 @@ namespace InstructionSetSimulation.Core
 {
 	public class CPU
 	{
-		private static CPU _instance;
-		private static Object _syncLock = new Object();
-
 		public byte[] Memory { get; set; } = new byte[1048576]; //1 MiB = 1024 KiB = 1024 * 1024 B
 
 		public Reader Rd;
@@ -20,9 +17,9 @@ namespace InstructionSetSimulation.Core
 
 		private bool endReached;
 
-		private CPU() {
+		public CPU() {
 
-			Rd = new Reader(_instance);
+			Rd = new Reader(this);
 
 			endReached = false;
 
@@ -37,33 +34,22 @@ namespace InstructionSetSimulation.Core
 			_registers.Add(8, new S1());
 
 			//add all of the operations to the dictionary on initialization
-			_operations.Add(1, new NOP());
-			_operations.Add(2, new MOVI());
-			_operations.Add(3, new MOVM());
-			_operations.Add(4, new MOVO());
-			_operations.Add(5, new MOV());
-			_operations.Add(6, new ADDI());
-			_operations.Add(7, new ADDM());
-			_operations.Add(8, new ADD());
-			_operations.Add(9, new SUBI());
-			_operations.Add(10, new SUBM());
-			_operations.Add(11, new SUB());
-			_operations.Add(12, new CMP());
-			_operations.Add(13, new JMP());
-			_operations.Add(14, new JNE());
-			_operations.Add(15, new JEQ());
-			_operations.Add(31, new END());
-		}
-
-		public static CPU GetInstance() {
-			if (_instance == null) {
-				lock (_syncLock) {
-					if (_instance == null) {
-						_instance = new CPU();
-					}
-				}
-			}			
-			return _instance;						
+			_operations.Add(1, new NOP(this));
+			_operations.Add(2, new MOVI(this));
+			_operations.Add(3, new MOVM(this));
+			_operations.Add(4, new MOVO(this));
+			_operations.Add(5, new MOV(this));
+			_operations.Add(6, new ADDI(this));
+			_operations.Add(7, new ADDM(this));
+			_operations.Add(8, new ADD(this));
+			_operations.Add(9, new SUBI(this));
+			_operations.Add(10, new SUBM(this));
+			_operations.Add(11, new SUB(this));
+			_operations.Add(12, new CMP(this));
+			_operations.Add(13, new JMP(this));
+			_operations.Add(14, new JNE(this));
+			_operations.Add(15, new JEQ(this));
+			_operations.Add(31, new END(this));
 		}
 
 		public bool ParseNextOp() {
