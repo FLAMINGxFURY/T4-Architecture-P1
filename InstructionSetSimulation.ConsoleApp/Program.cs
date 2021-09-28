@@ -9,10 +9,13 @@ namespace InstructionSetSimulation.ConsoleApp
 		{
 			CPU cpu = new CPU();
 
-			bool end = false;
-
-			//now make this a loop with a condition based on end
-			while (!cpu.ParseNextOp());
+			//loop through instructions
+			while (!cpu.ParseNextOp()) {
+				for(int i = 0; i < 8; i++) {
+					Console.WriteLine("Register " + i + ": " + cpu.GetRegister((ushort)i).Data);
+				}
+				Console.WriteLine("\n\n\n");
+			}
 
 			//Destin example
 
