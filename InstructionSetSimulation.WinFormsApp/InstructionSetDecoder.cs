@@ -119,5 +119,16 @@ namespace InstructionSetSimulation.WinFormsApp
 			
 			
 		}
-	}
+
+		/// <summary>
+		/// Displays about form
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			var form = new About();
+			form.Show();
+        }
+    }
 }
