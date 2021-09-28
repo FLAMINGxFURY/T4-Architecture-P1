@@ -40,21 +40,20 @@ namespace InstructionSetSimulation.WinFormsApp
         /// <param name="e"></param>
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {
                     //pass file path to Reader
                     cpu.Rd.fileStr = openFileDialog.FileName;
 
                     //**We will need some return values for each line of code to print to the display**
 
                     //loop while there is another line of code to parse
-                        //print out binary instruction in top text box
-                        //print out decoded instruction in bottom text box
-                        //update registers
+                    //print out binary instruction in top text box
+                    //print out decoded instruction in bottom text box
+                    //update registers
 
                 }
+            }
             
         }
 	}

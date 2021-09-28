@@ -22,7 +22,8 @@ namespace InstructionSetSimulation.Core {
 			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
 			while(fileIn.PeekChar() != -1) { //ensure not empty
 				proMem.Add(fileIn.ReadUInt16());
-			}			
+			}
+			fileIn.Close();
 		}
 
 		public ushort GetNextWord() {
