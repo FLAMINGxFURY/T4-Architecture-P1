@@ -153,7 +153,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// CXBox
 			// 
-			this.CXBox.Location = new System.Drawing.Point(466, 420);
+			this.CXBox.Location = new System.Drawing.Point(466, 387);
 			this.CXBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.CXBox.Name = "CXBox";
 			this.CXBox.PlaceholderText = "0";
@@ -163,7 +163,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// DXBox
 			// 
-			this.DXBox.Location = new System.Drawing.Point(466, 455);
+			this.DXBox.Location = new System.Drawing.Point(466, 422);
 			this.DXBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.DXBox.Name = "DXBox";
 			this.DXBox.PlaceholderText = "0";
@@ -173,7 +173,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// SPBox
 			// 
-			this.SPBox.Location = new System.Drawing.Point(466, 490);
+			this.SPBox.Location = new System.Drawing.Point(466, 457);
 			this.SPBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.SPBox.Name = "SPBox";
 			this.SPBox.PlaceholderText = "0";
@@ -184,7 +184,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// BPBox
 			// 
-			this.BPBox.Location = new System.Drawing.Point(466, 525);
+			this.BPBox.Location = new System.Drawing.Point(466, 492);
 			this.BPBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.BPBox.Name = "BPBox";
 			this.BPBox.PlaceholderText = "0";
@@ -194,7 +194,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// S0Box
 			// 
-			this.S0Box.Location = new System.Drawing.Point(466, 560);
+			this.S0Box.Location = new System.Drawing.Point(466, 527);
 			this.S0Box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.S0Box.Name = "S0Box";
 			this.S0Box.PlaceholderText = "0";
@@ -204,7 +204,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// S1Box
 			// 
-			this.S1Box.Location = new System.Drawing.Point(466, 595);
+			this.S1Box.Location = new System.Drawing.Point(466, 562);
 			this.S1Box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.S1Box.Name = "S1Box";
 			this.S1Box.PlaceholderText = "0";
@@ -214,7 +214,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// PCBox
 			// 
-			this.PCBox.Location = new System.Drawing.Point(466, 630);
+			this.PCBox.Location = new System.Drawing.Point(466, 597);
 			this.PCBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.PCBox.Name = "PCBox";
 			this.PCBox.PlaceholderText = "0";
@@ -224,7 +224,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// CBox
 			// 
-			this.CBox.Location = new System.Drawing.Point(466, 665);
+			this.CBox.Location = new System.Drawing.Point(466, 632);
 			this.CBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.CBox.Name = "CBox";
 			this.CBox.PlaceholderText = "0";
@@ -234,7 +234,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// RegistersHeaderLabel
 			// 
 			this.RegistersHeaderLabel.AutoSize = true;
-			this.RegistersHeaderLabel.Location = new System.Drawing.Point(434, 308);
+			this.RegistersHeaderLabel.Location = new System.Drawing.Point(434, 275);
 			this.RegistersHeaderLabel.Name = "RegistersHeaderLabel";
 			this.RegistersHeaderLabel.Size = new System.Drawing.Size(69, 20);
 			this.RegistersHeaderLabel.TabIndex = 13;
@@ -243,7 +243,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// NextBtn
 			// 
-			this.NextBtn.Location = new System.Drawing.Point(466, 143);
+			this.NextBtn.Location = new System.Drawing.Point(466, 105);
 			this.NextBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.NextBtn.Name = "NextBtn";
 			this.NextBtn.Size = new System.Drawing.Size(126, 104);
@@ -254,7 +254,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// BXBox
 			// 
-			this.BXBox.Location = new System.Drawing.Point(466, 385);
+			this.BXBox.Location = new System.Drawing.Point(466, 352);
 			this.BXBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.BXBox.Name = "BXBox";
 			this.BXBox.PlaceholderText = "0";
@@ -264,7 +264,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// AXBox
 			// 
-			this.AXBox.Location = new System.Drawing.Point(466, 350);
+			this.AXBox.Location = new System.Drawing.Point(466, 317);
 			this.AXBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.AXBox.Name = "AXBox";
 			this.AXBox.PlaceholderText = "0";
@@ -275,7 +275,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// AXLabel
 			// 
 			this.AXLabel.AutoSize = true;
-			this.AXLabel.Location = new System.Drawing.Point(432, 357);
+			this.AXLabel.Location = new System.Drawing.Point(432, 324);
 			this.AXLabel.Name = "AXLabel";
 			this.AXLabel.Size = new System.Drawing.Size(28, 20);
 			this.AXLabel.TabIndex = 17;
@@ -285,7 +285,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// BXLabel
 			// 
 			this.BXLabel.AutoSize = true;
-			this.BXLabel.Location = new System.Drawing.Point(432, 392);
+			this.BXLabel.Location = new System.Drawing.Point(432, 359);
 			this.BXLabel.Name = "BXLabel";
 			this.BXLabel.Size = new System.Drawing.Size(27, 20);
 			this.BXLabel.TabIndex = 18;
@@ -294,7 +294,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// CXLabel
 			// 
 			this.CXLabel.AutoSize = true;
-			this.CXLabel.Location = new System.Drawing.Point(432, 427);
+			this.CXLabel.Location = new System.Drawing.Point(432, 394);
 			this.CXLabel.Name = "CXLabel";
 			this.CXLabel.Size = new System.Drawing.Size(27, 20);
 			this.CXLabel.TabIndex = 19;
@@ -303,7 +303,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// DXLabel
 			// 
 			this.DXLabel.AutoSize = true;
-			this.DXLabel.Location = new System.Drawing.Point(432, 462);
+			this.DXLabel.Location = new System.Drawing.Point(432, 429);
 			this.DXLabel.Name = "DXLabel";
 			this.DXLabel.Size = new System.Drawing.Size(29, 20);
 			this.DXLabel.TabIndex = 20;
@@ -312,7 +312,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// SPLabel
 			// 
 			this.SPLabel.AutoSize = true;
-			this.SPLabel.Location = new System.Drawing.Point(432, 497);
+			this.SPLabel.Location = new System.Drawing.Point(432, 464);
 			this.SPLabel.Name = "SPLabel";
 			this.SPLabel.Size = new System.Drawing.Size(25, 20);
 			this.SPLabel.TabIndex = 21;
@@ -321,7 +321,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// BPLabel
 			// 
 			this.BPLabel.AutoSize = true;
-			this.BPLabel.Location = new System.Drawing.Point(432, 532);
+			this.BPLabel.Location = new System.Drawing.Point(432, 499);
 			this.BPLabel.Name = "BPLabel";
 			this.BPLabel.Size = new System.Drawing.Size(26, 20);
 			this.BPLabel.TabIndex = 22;
@@ -330,7 +330,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// S0Label
 			// 
 			this.S0Label.AutoSize = true;
-			this.S0Label.Location = new System.Drawing.Point(432, 567);
+			this.S0Label.Location = new System.Drawing.Point(432, 534);
 			this.S0Label.Name = "S0Label";
 			this.S0Label.Size = new System.Drawing.Size(25, 20);
 			this.S0Label.TabIndex = 23;
@@ -339,7 +339,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// S1Label
 			// 
 			this.S1Label.AutoSize = true;
-			this.S1Label.Location = new System.Drawing.Point(432, 602);
+			this.S1Label.Location = new System.Drawing.Point(432, 569);
 			this.S1Label.Name = "S1Label";
 			this.S1Label.Size = new System.Drawing.Size(25, 20);
 			this.S1Label.TabIndex = 24;
@@ -348,7 +348,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// PCLabel
 			// 
 			this.PCLabel.AutoSize = true;
-			this.PCLabel.Location = new System.Drawing.Point(432, 637);
+			this.PCLabel.Location = new System.Drawing.Point(432, 604);
 			this.PCLabel.Name = "PCLabel";
 			this.PCLabel.Size = new System.Drawing.Size(26, 20);
 			this.PCLabel.TabIndex = 25;
@@ -357,7 +357,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// CLabel
 			// 
 			this.CLabel.AutoSize = true;
-			this.CLabel.Location = new System.Drawing.Point(439, 672);
+			this.CLabel.Location = new System.Drawing.Point(439, 639);
 			this.CLabel.Name = "CLabel";
 			this.CLabel.Size = new System.Drawing.Size(18, 20);
 			this.CLabel.TabIndex = 26;
@@ -366,7 +366,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// PLabel
 			// 
 			this.PLabel.AutoSize = true;
-			this.PLabel.Location = new System.Drawing.Point(503, 672);
+			this.PLabel.Location = new System.Drawing.Point(503, 639);
 			this.PLabel.Name = "PLabel";
 			this.PLabel.Size = new System.Drawing.Size(17, 20);
 			this.PLabel.TabIndex = 28;
@@ -374,7 +374,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// PBox
 			// 
-			this.PBox.Location = new System.Drawing.Point(530, 665);
+			this.PBox.Location = new System.Drawing.Point(530, 632);
 			this.PBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.PBox.Name = "PBox";
 			this.PBox.PlaceholderText = "0";
@@ -384,7 +384,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// ALabel
 			// 
 			this.ALabel.AutoSize = true;
-			this.ALabel.Location = new System.Drawing.Point(570, 672);
+			this.ALabel.Location = new System.Drawing.Point(570, 639);
 			this.ALabel.Name = "ALabel";
 			this.ALabel.Size = new System.Drawing.Size(19, 20);
 			this.ALabel.TabIndex = 30;
@@ -392,7 +392,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// ABox
 			// 
-			this.ABox.Location = new System.Drawing.Point(597, 665);
+			this.ABox.Location = new System.Drawing.Point(597, 632);
 			this.ABox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ABox.Name = "ABox";
 			this.ABox.PlaceholderText = "0";
@@ -402,7 +402,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// ZLabel
 			// 
 			this.ZLabel.AutoSize = true;
-			this.ZLabel.Location = new System.Drawing.Point(439, 707);
+			this.ZLabel.Location = new System.Drawing.Point(439, 674);
 			this.ZLabel.Name = "ZLabel";
 			this.ZLabel.Size = new System.Drawing.Size(18, 20);
 			this.ZLabel.TabIndex = 32;
@@ -410,7 +410,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// ZBox
 			// 
-			this.ZBox.Location = new System.Drawing.Point(466, 700);
+			this.ZBox.Location = new System.Drawing.Point(466, 667);
 			this.ZBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ZBox.Name = "ZBox";
 			this.ZBox.PlaceholderText = "0";
@@ -420,7 +420,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// SLabel
 			// 
 			this.SLabel.AutoSize = true;
-			this.SLabel.Location = new System.Drawing.Point(503, 707);
+			this.SLabel.Location = new System.Drawing.Point(503, 674);
 			this.SLabel.Name = "SLabel";
 			this.SLabel.Size = new System.Drawing.Size(17, 20);
 			this.SLabel.TabIndex = 34;
@@ -428,7 +428,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// SBox
 			// 
-			this.SBox.Location = new System.Drawing.Point(530, 700);
+			this.SBox.Location = new System.Drawing.Point(530, 667);
 			this.SBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.SBox.Name = "SBox";
 			this.SBox.PlaceholderText = "0";
@@ -438,7 +438,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// OLabel
 			// 
 			this.OLabel.AutoSize = true;
-			this.OLabel.Location = new System.Drawing.Point(570, 707);
+			this.OLabel.Location = new System.Drawing.Point(570, 674);
 			this.OLabel.Name = "OLabel";
 			this.OLabel.Size = new System.Drawing.Size(20, 20);
 			this.OLabel.TabIndex = 36;
@@ -446,7 +446,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// OBox
 			// 
-			this.OBox.Location = new System.Drawing.Point(597, 700);
+			this.OBox.Location = new System.Drawing.Point(597, 667);
 			this.OBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.OBox.Name = "OBox";
 			this.OBox.PlaceholderText = "0";
@@ -457,7 +457,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(666, 735);
+			this.ClientSize = new System.Drawing.Size(666, 722);
 			this.Controls.Add(this.OLabel);
 			this.Controls.Add(this.OBox);
 			this.Controls.Add(this.SLabel);
