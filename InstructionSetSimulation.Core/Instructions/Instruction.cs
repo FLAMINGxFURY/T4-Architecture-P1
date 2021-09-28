@@ -15,6 +15,10 @@ namespace InstructionSetSimulation.Core.Instructions
 
 		public abstract void Execute(ushort operand);
 
+		public string ToText(ushort operand) {
+			return "placeholder";
+		}
+
 		protected ushort GetRegister1Code(ushort operand)
         {
 			return (ushort)(operand >> 8);

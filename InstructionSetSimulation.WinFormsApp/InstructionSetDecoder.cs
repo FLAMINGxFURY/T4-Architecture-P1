@@ -17,6 +17,7 @@ namespace InstructionSetSimulation.WinFormsApp
 		//Variables
 		CPU cpu;
 		List<string> dispProgMem;
+		List<string> dispProgCode;
 
 		public InstructionSetDecoder()
 		{
@@ -87,8 +88,30 @@ namespace InstructionSetSimulation.WinFormsApp
 
 					BinaryFileBox.Text = progDisplay;
 
-					//TODO: Display Code for Program
-					
+					//Display Code for Program
+					dispProgCode = new List<string>();
+
+					foreach (ushort x in cpu.Rd.proMem) {
+						string output = "";
+						
+						//get opcode
+						ushort op = (ushort)(x >> 11);
+						output += cpu._operations[op].ToString() + " ";
+
+						//get rest
+						ushort remainder = (ushort)(0b_0000_0111_1111_1111 & x); //bit mask for removing opcode
+						output += cpu._operations[op].ToText(remainder);
+
+						dispProgCode.Add(output);
+					}
+
+					string codeDisplay = "";
+
+					foreach(string s in dispProgCode) {
+						codeDisplay += s + Environment.NewLine;
+					}
+
+					DecodedInstructionsBox.Text = codeDisplay;
 
 				}
 			}

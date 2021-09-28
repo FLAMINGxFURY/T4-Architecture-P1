@@ -135,12 +135,14 @@ namespace InstructionSetSimulation.WinFormsApp
 			// 
 			// DecodedInstructionsBox
 			// 
+			this.DecodedInstructionsBox.AcceptsReturn = true;
 			this.DecodedInstructionsBox.Location = new System.Drawing.Point(14, 379);
 			this.DecodedInstructionsBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.DecodedInstructionsBox.Multiline = true;
 			this.DecodedInstructionsBox.Name = "DecodedInstructionsBox";
 			this.DecodedInstructionsBox.Size = new System.Drawing.Size(363, 316);
 			this.DecodedInstructionsBox.TabIndex = 3;
+			this.DecodedInstructionsBox.WordWrap = false;
 			// 
 			// DecodedInstructionsBoxLabel
 			// 
