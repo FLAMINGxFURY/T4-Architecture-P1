@@ -14,7 +14,7 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 
 		public override void Execute(ushort operand) {
-
+			//Do nothing, explicitly :)
 		}
 	}
 }

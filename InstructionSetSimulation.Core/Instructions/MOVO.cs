@@ -11,19 +11,16 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 
 		public override void Execute(ushort operand) {
-			// Get memory address
-			var memH = (byte)(operand & 0b_1111_0000_0000);
-			var memL = (byte)(operand & 0b_0000_1111_0000);
-
-			var mem = BitConverter.ToUInt16(new[] { memH, memL });
+			// Get memory address from s0/s1
+			var mem = GetMemoryAddress();
 
 			// Get register
-			var reg = cpu.GetRegister((ushort)(operand & 0b_0000_0000_1111));
+			var reg = cpu.GetRegister(GetRegister1Code(operand));
 
 			// Convert contents of register to bytes
 			var dataAsBytes = BitConverter.GetBytes(reg.Data);
 
-			// Put contents of regsiter into memory
+			// Put contents of regsiter into memory stored little endian
 			cpu.Memory[mem] = dataAsBytes[1];
 			cpu.Memory[mem + 1] = dataAsBytes[0];
 		}

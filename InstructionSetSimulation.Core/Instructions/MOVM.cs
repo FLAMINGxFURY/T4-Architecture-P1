@@ -11,11 +11,10 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 
 		public override void Execute(ushort operand) {
-			// reg contains memory location
 			var reg = cpu.GetRegister(GetRegister1Code(operand));
 
 			// get memory address
-			var address = GetImmediate(operand);
+			var address = GetMemoryAddress();
 
 			// Move short at address into register
 			reg.Data = BitConverter.ToUInt16(new[] { cpu.Memory[address + 1], cpu.Memory[address] });
