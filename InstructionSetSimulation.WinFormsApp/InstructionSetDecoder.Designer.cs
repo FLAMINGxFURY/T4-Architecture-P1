@@ -180,7 +180,6 @@ namespace InstructionSetSimulation.WinFormsApp
 			this.SPBox.Size = new System.Drawing.Size(156, 27);
 			this.SPBox.TabIndex = 7;
 			this.SPBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.SPBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
 			// 
 			// BPBox
 			// 
@@ -239,7 +238,6 @@ namespace InstructionSetSimulation.WinFormsApp
 			this.RegistersHeaderLabel.Size = new System.Drawing.Size(69, 20);
 			this.RegistersHeaderLabel.TabIndex = 13;
 			this.RegistersHeaderLabel.Text = "Registers";
-			this.RegistersHeaderLabel.Click += new System.EventHandler(this.label3_Click);
 			// 
 			// NextBtn
 			// 
@@ -250,7 +248,7 @@ namespace InstructionSetSimulation.WinFormsApp
 			this.NextBtn.TabIndex = 14;
 			this.NextBtn.Text = "Next Instruction";
 			this.NextBtn.UseVisualStyleBackColor = true;
-			this.NextBtn.Click += new System.EventHandler(this.button1_Click);
+			this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
 			// 
 			// BXBox
 			// 
@@ -280,7 +278,6 @@ namespace InstructionSetSimulation.WinFormsApp
 			this.AXLabel.Size = new System.Drawing.Size(28, 20);
 			this.AXLabel.TabIndex = 17;
 			this.AXLabel.Text = "AX";
-			this.AXLabel.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// BXLabel
 			// 

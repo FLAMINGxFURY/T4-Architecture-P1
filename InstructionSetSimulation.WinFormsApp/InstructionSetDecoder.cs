@@ -19,17 +19,12 @@ namespace InstructionSetSimulation.WinFormsApp
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Executes the next instruction, updating the registers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void NextBtn_Click(object sender, EventArgs e)
         {
             //implement
         }
@@ -63,13 +58,5 @@ namespace InstructionSetSimulation.WinFormsApp
             }
             
         }
-
-		private void label4_Click(object sender, EventArgs e) {
-
-		}
-
-		private void textBox5_TextChanged(object sender, EventArgs e) {
-
-		}
 	}
 }
