@@ -20,6 +20,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			reg.Data = BitConverter.ToUInt16(new[] { cpu.Memory[address + 1], cpu.Memory[address] });
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "MOVM";
 		}

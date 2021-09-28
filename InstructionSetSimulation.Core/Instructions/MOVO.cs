@@ -25,6 +25,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.Memory[mem + 1] = dataAsBytes[0];
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "MOVO";
 		}

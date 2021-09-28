@@ -15,6 +15,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.End();
 		}
 
+		public override string ToText(ushort operand) {
+			return "";
+		}
+
 		public override string ToString() {
 			return "END";
 		}

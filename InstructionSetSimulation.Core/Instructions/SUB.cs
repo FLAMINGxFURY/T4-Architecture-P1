@@ -18,6 +18,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			srcReg1.Data = (ushort)(srcReg1.Data - srcReg2.Data);
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString() + ", " + cpu.GetRegister(GetRegister2Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "SUB";
 		}

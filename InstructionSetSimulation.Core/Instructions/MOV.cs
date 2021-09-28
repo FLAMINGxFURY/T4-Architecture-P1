@@ -16,6 +16,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			dest.Data = src.Data;
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString() + ", " + cpu.GetRegister(GetRegister2Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "MOV";
 		}

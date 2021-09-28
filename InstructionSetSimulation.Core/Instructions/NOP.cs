@@ -17,6 +17,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			//Do nothing, explicitly :)
 		}
 
+		public override string ToText(ushort operand) {
+			return "";
+		}
+
 		public override string ToString() {
 			return "NOP";
 		}

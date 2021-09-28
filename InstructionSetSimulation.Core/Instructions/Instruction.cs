@@ -15,7 +15,7 @@ namespace InstructionSetSimulation.Core.Instructions
 
 		public abstract void Execute(ushort operand);
 
-		public string ToText(ushort operand) {
+		public virtual string ToText(ushort operand) {
 			return "placeholder";
 		}
 

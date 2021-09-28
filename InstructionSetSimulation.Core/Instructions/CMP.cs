@@ -24,6 +24,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.EFlags['z'] = result == 0;
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString() + ", " + cpu.GetRegister(GetRegister2Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "CMP";
 		}

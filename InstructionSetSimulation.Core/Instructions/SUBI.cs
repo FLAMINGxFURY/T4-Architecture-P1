@@ -14,6 +14,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			register.Data -= GetImmediate(operand);
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString() + ", " + GetImmediate(operand);
+		}
+
 		public override string ToString() {
 			return "SUBI";
 		}

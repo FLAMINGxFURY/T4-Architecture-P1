@@ -14,6 +14,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.Rd.PC += addToPC;
 		}
 
+		public override string ToText(ushort operand) {
+			return GetImmediate(operand).ToString();
+		}
+
 		public override string ToString() {
 			return "JMP";
 		}

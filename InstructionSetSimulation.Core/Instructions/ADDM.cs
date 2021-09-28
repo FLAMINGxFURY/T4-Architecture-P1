@@ -26,6 +26,10 @@ namespace InstructionSetSimulation.Core.Instructions
 			register.Data += data;
 		}
 
+		public override string ToText(ushort operand) {
+			return cpu.GetRegister(GetRegister1Code(operand)).ToString();
+		}
+
 		public override string ToString() {
 			return "ADDM";
 		}
