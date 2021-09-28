@@ -11,7 +11,7 @@ namespace InstructionSetSimulation.Core.Instructions
 
 		public override void Execute(ushort operand) {
 			var reg = cpu.GetRegister(GetRegister1Code(operand));
-			var data = GetData(operand);
+			var data = GetImmediate(operand);
 
 			reg.Data = data;
 		}

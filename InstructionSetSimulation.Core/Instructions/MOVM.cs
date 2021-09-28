@@ -15,7 +15,7 @@ namespace InstructionSetSimulation.Core.Instructions
 			var reg = cpu.GetRegister(GetRegister1Code(operand));
 
 			// get memory address
-			var address = GetData(operand);
+			var address = GetImmediate(operand);
 
 			// Move short at address into register
 			reg.Data = BitConverter.ToUInt16(new[] { cpu.Memory[address + 1], cpu.Memory[address] });

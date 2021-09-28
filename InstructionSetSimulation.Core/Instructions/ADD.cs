@@ -14,10 +14,8 @@ namespace InstructionSetSimulation.Core.Instructions
 			var srcReg1 = cpu.GetRegister(GetRegister1Code(operand));
 			// src2
 			var srcReg2 = cpu.GetRegister(GetRegister2Code(operand));
-			// src3
-			var srcReg3 = cpu.GetRegister(GetRegister3Code(operand));
 
-			srcReg3.Data = (ushort)(srcReg1.Data + srcReg2.Data);
+			srcReg1.Data = (ushort)(srcReg1.Data + srcReg2.Data);
 		}
 	}
 }
