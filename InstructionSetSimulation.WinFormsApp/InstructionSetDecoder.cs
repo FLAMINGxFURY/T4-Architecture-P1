@@ -125,7 +125,6 @@ namespace InstructionSetSimulation.WinFormsApp
 					DecodedInstructionsBox.Text = codeDisplay;
 					txtCurrentInst.Text = "";
 					CurrentInst = 0;
-					cpu.endReached = false;
 
 				}
 			}
