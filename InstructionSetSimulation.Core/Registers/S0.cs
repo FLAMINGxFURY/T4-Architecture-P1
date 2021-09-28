@@ -8,6 +8,6 @@ namespace InstructionSetSimulation.Core.Registers
 {
 	public class S0: Register
 	{
-		public override ushort ID => 0x07;
+		public override ushort ID => 0x06;
 	}
 }

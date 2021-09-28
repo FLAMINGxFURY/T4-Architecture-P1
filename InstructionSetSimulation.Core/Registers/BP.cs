@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InstructionSetSimulation.Core.Registers
 {
-	public class SX : Register
+	public class BP : Register
 	{
 		public override ushort ID => 0x05;
 	}
