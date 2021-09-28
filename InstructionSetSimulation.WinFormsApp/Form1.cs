@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InstructionSetSimulation.Core;
 
 namespace InstructionSetSimulation.WinFormsApp
 {
@@ -17,5 +18,29 @@ namespace InstructionSetSimulation.WinFormsApp
             InitializeComponent();
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Executes the next instruction, updating the registers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //implement
+        }
+
+        /// <summary>
+        /// Allows user to select binary file to decode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             //implement, may require some minor design changes in Reader class
+        }
     }
 }
