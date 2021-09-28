@@ -11,7 +11,21 @@ namespace InstructionSetSimulation.Core.Instructions
 
 		public override void Execute(ushort operand) {
 			var register = cpu.GetRegister(GetRegister1Code(operand));
-			register.Data += GetImmediate(operand);
+
+			var val1 = register.Data;
+			var val2 = GetImmediate(operand);
+
+			register.Data += val2;
+
+			cpu.EFlags.SetAll
+			(
+				WouldCarry(val1, val2),
+				Parity(register.Data),
+				AuxiliaryCarryAddition(val1, val2),
+				register.Data == 0,
+				register.Data < 0,
+				WouldOverflow(val1, val2)
+			);
 		}
 
 		public override string ToText(ushort operand) {

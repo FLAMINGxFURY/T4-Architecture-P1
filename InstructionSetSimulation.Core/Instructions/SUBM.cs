@@ -26,6 +26,16 @@ namespace InstructionSetSimulation.Core.Instructions
 			ushort data = (ushort)(byte1 + byte2);
 
 			register.Data -= data;
+
+			cpu.EFlags.SetAll
+			(
+				WouldBorrow(byte1, byte2),
+				Parity(register.Data),
+				AuxiliaryCarrySubtraction(byte1, byte2),
+				register.Data == 0,
+				register.Data < 0,
+				WouldOverflow(byte1, byte2)
+			);
 		}
 
 		public override string ToText(ushort operand) {

@@ -20,8 +20,15 @@ namespace InstructionSetSimulation.Core.Instructions
 
 			var result = reg1.Data - reg2.Data;
 
-			cpu.EFlags['c'] = DidCarry(reg1.Data, reg2.Data);
-			cpu.EFlags['z'] = result == 0;
+			cpu.EFlags.SetAll
+			(
+				WouldBorrow(reg1.Data, reg2.Data),
+				Parity((ushort)result),
+				null,
+				result == 0,
+				result < 0,
+				WouldOverflow(reg1.Data, reg2.Data)
+			);
 		}
 
 		public override string ToText(ushort operand) {
