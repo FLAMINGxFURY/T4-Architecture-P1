@@ -71,6 +71,8 @@ namespace InstructionSetSimulation.WinFormsApp
             this.SBox = new System.Windows.Forms.TextBox();
             this.OLabel = new System.Windows.Forms.Label();
             this.OBox = new System.Windows.Forms.TextBox();
+            this.txtCurrentInst = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +114,7 @@ namespace InstructionSetSimulation.WinFormsApp
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -244,11 +246,11 @@ namespace InstructionSetSimulation.WinFormsApp
             // 
             // NextBtn
             // 
-            this.NextBtn.Location = new System.Drawing.Point(407, 74);
+            this.NextBtn.Location = new System.Drawing.Point(384, 55);
             this.NextBtn.Name = "NextBtn";
-            this.NextBtn.Size = new System.Drawing.Size(137, 98);
+            this.NextBtn.Size = new System.Drawing.Size(161, 62);
             this.NextBtn.TabIndex = 14;
-            this.NextBtn.Text = "Next Instruction";
+            this.NextBtn.Text = "Execute Next Instruction";
             this.NextBtn.UseVisualStyleBackColor = true;
             this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
@@ -452,11 +454,33 @@ namespace InstructionSetSimulation.WinFormsApp
             this.OBox.Size = new System.Drawing.Size(22, 23);
             this.OBox.TabIndex = 35;
             // 
+            // txtCurrentInst
+            // 
+            this.txtCurrentInst.AcceptsReturn = true;
+            this.txtCurrentInst.Location = new System.Drawing.Point(407, 166);
+            this.txtCurrentInst.Multiline = true;
+            this.txtCurrentInst.Name = "txtCurrentInst";
+            this.txtCurrentInst.ReadOnly = true;
+            this.txtCurrentInst.Size = new System.Drawing.Size(137, 23);
+            this.txtCurrentInst.TabIndex = 37;
+            this.txtCurrentInst.WordWrap = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(408, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Current Instruction:";
+            // 
             // InstructionSetDecoder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 554);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtCurrentInst);
             this.Controls.Add(this.OLabel);
             this.Controls.Add(this.OBox);
             this.Controls.Add(this.SLabel);
@@ -549,6 +573,8 @@ namespace InstructionSetSimulation.WinFormsApp
 		private System.Windows.Forms.Label OLabel;
 		private System.Windows.Forms.TextBox OBox;
 		private System.Windows.Forms.TextBox PBox;
-	}
+        private System.Windows.Forms.TextBox txtCurrentInst;
+        private System.Windows.Forms.Label label1;
+    }
 }
 

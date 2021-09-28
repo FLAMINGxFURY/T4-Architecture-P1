@@ -17,7 +17,7 @@ namespace InstructionSetSimulation.Core
 
 		public Dictionary<ushort, Instruction> _operations = new Dictionary<ushort, Instruction>();
 
-		private bool endReached;
+		public bool endReached;
 
 		public EFlags EFlags { get; } = new EFlags();
 

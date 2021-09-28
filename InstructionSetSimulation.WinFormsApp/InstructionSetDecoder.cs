@@ -18,6 +18,8 @@ namespace InstructionSetSimulation.WinFormsApp
 		CPU cpu;
 		List<string> dispProgMem;
 		List<string> dispProgCode;
+		int InstCount = 0;
+		int CurrentInst = 0;
 
 		public InstructionSetDecoder()
 		{
@@ -33,7 +35,8 @@ namespace InstructionSetSimulation.WinFormsApp
 		private void NextBtn_Click(object sender, EventArgs e)
 		{
 			//after halt disable the button
-			if (cpu.ParseNextOp()) NextBtn.Enabled = false;
+			if (cpu.ParseNextOp())
+				NextBtn.Enabled = false;
 
 			//poll registers and flags for data
 			AXBox.Text = cpu.GetRegister(0).Data.ToString("X4");
@@ -53,6 +56,13 @@ namespace InstructionSetSimulation.WinFormsApp
 			ZBox.Text = Convert.ToInt32(cpu.EFlags['z']).ToString();
 			SBox.Text = Convert.ToInt32(cpu.EFlags['s']).ToString();
 			OBox.Text = Convert.ToInt32(cpu.EFlags['o']).ToString();
+
+			if (CurrentInst < InstCount)
+			{
+				txtCurrentInst.Text = "";
+				txtCurrentInst.Text = dispProgCode[CurrentInst];
+				CurrentInst++;
+			}
 		}
 
 		/// <summary>
@@ -83,6 +93,7 @@ namespace InstructionSetSimulation.WinFormsApp
 					string progDisplay = "";
 
 					foreach (string s in dispProgMem) {
+						InstCount++;
 						progDisplay += (s + " ");
 					}
 
@@ -112,6 +123,9 @@ namespace InstructionSetSimulation.WinFormsApp
 					}
 
 					DecodedInstructionsBox.Text = codeDisplay;
+					txtCurrentInst.Text = "";
+					CurrentInst = 0;
+					cpu.endReached = false;
 
 				}
 			}

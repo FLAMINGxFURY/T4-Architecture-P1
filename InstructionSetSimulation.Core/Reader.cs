@@ -34,8 +34,14 @@ namespace InstructionSetSimulation.Core {
 
 		public ushort GetNextWord() {
 
-			var ret = proMem[PC];
-			PC++;
+			ushort ret;
+			if (PC < proMem.Count)
+			{
+				ret = proMem[PC];
+				PC++;
+			}
+			else //we are definitely at the end, so force the END instruction
+				ret = 0x1F;
 
 			return ret;
 		}
