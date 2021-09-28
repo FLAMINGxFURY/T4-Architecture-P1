@@ -16,6 +16,7 @@ namespace InstructionSetSimulation.WinFormsApp
     {
         //Variables
         CPU cpu;
+        List<string> dispProgMem;
 
         public InstructionSetDecoder()
         {
@@ -42,18 +43,31 @@ namespace InstructionSetSimulation.WinFormsApp
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    //pass file path to Reader
+                    //pass file path to Reader and open it
                     cpu.Rd.fileStr = openFileDialog.FileName;
+                    cpu.Rd.OpenFile();
 
-                    //**We will need some return values for each line of code to print to the display**
+                    dispProgMem = new List<string>();
 
-                    //loop while there is another line of code to parse
-                    //print out binary instruction in top text box
-                    //print out decoded instruction in bottom text box
-                    //update registers
+                    foreach(ushort x in cpu.Rd.proMem) {
+                        string add = x.ToString("X4"); //4 digits of hex
+                        add = add.Insert(2, " ");
+                        dispProgMem.Add(add);
+					}
+
+                    string progDisplay = "";
+
+                    foreach (string s in dispProgMem) {
+                        progDisplay += (s + " ");
+                    }
+
+                    BinaryFileBox.Text = progDisplay;
+                    
 
                 }
             }
+
+            
             
         }
 	}

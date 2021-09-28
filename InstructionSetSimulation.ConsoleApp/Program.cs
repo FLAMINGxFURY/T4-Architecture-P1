@@ -9,6 +9,9 @@ namespace InstructionSetSimulation.ConsoleApp
 		{
 			CPU cpu = new CPU();
 
+			cpu.Rd.fileStr = "../../../../Example 1.bin";
+			cpu.Rd.OpenFile();
+
 			//loop through instructions
 			while (!cpu.ParseNextOp()) {
 				for(int i = 0; i < 8; i++) {

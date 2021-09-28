@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace InstructionSetSimulation.Core {
 	public class Reader {
 		public ushort PC { get; set; }           //Program Counter
-		public string fileStr { get; set; } = "../../../../Example 1.bin";
+		public string fileStr { get; set; }
 		public List<ushort> proMem;
 		private BinaryReader fileIn;
 		private CPU cpu;
@@ -16,11 +16,14 @@ namespace InstructionSetSimulation.Core {
 		public Reader(CPU cpuref) {
 			PC = 0;
 			cpu = cpuref;
-
-			//read in file to program memory
 			proMem = new List<ushort>();
+		}
+
+		public void OpenFile() {
+			proMem.Clear();
+			//read in file to program memory
 			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
-			while(fileIn.PeekChar() != -1) { //ensure not empty
+			while (fileIn.PeekChar() != -1) { //ensure not empty
 				proMem.Add(fileIn.ReadUInt16());
 			}
 			fileIn.Close();
