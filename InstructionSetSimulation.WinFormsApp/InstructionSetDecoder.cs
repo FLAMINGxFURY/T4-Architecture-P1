@@ -12,72 +12,89 @@ using System.IO;
 
 namespace InstructionSetSimulation.WinFormsApp
 {
-    public partial class InstructionSetDecoder : Form
-    {
-        //Variables
-        CPU cpu;
-        List<string> dispProgMem;
+	public partial class InstructionSetDecoder : Form
+	{
+		//Variables
+		CPU cpu;
+		List<string> dispProgMem;
 
-        public InstructionSetDecoder()
-        {
-            InitializeComponent();
-            cpu = new CPU();
-        }
+		public InstructionSetDecoder()
+		{
+			InitializeComponent();
+			cpu = new CPU();
+		}
 
-        /// <summary>
-        /// Executes the next instruction, updating the registers
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NextBtn_Click(object sender, EventArgs e)
-        {
-            //after halt disable the button
-            if (cpu.ParseNextOp()) NextBtn.Enabled = false;
+		/// <summary>
+		/// Executes the next instruction, updating the registers
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void NextBtn_Click(object sender, EventArgs e)
+		{
+			//after halt disable the button
+			if (cpu.ParseNextOp()) NextBtn.Enabled = false;
 
-            //highlight change
-        }
+			//poll registers and flags for data
+			AXBox.Text = cpu.GetRegister(0).Data.ToString("X4");
+			BXBox.Text = cpu.GetRegister(1).Data.ToString("X4");
+			CXBox.Text = cpu.GetRegister(2).Data.ToString("X4");
+			DXBox.Text = cpu.GetRegister(3).Data.ToString("X4");
+			SPBox.Text = cpu.GetRegister(4).Data.ToString("X4");
+			BPBox.Text = cpu.GetRegister(5).Data.ToString("X4");
+			S0Box.Text = cpu.GetRegister(6).Data.ToString("X4");
+			S1Box.Text = cpu.GetRegister(7).Data.ToString("X4");
 
-        /// <summary>
-        /// Allows user to select binary file to decode
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
-                if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                    //pass file path to Reader and open it
-                    cpu.Rd.fileStr = openFileDialog.FileName;
-                    cpu.Rd.OpenFile();
+			PCBox.Text = cpu.Rd.PC.ToString("X4");
 
-                    //after new file is opened reenable button
-                    NextBtn.Enabled = true;
+			CBox.Text = Convert.ToInt32(cpu.EFlags['c']).ToString();
+			PBox.Text = Convert.ToInt32(cpu.EFlags['p']).ToString();
+			ABox.Text = Convert.ToInt32(cpu.EFlags['a']).ToString();
+			ZBox.Text = Convert.ToInt32(cpu.EFlags['z']).ToString();
+			SBox.Text = Convert.ToInt32(cpu.EFlags['s']).ToString();
+			OBox.Text = Convert.ToInt32(cpu.EFlags['o']).ToString();
+		}
 
-                    //Display Hex for Program
-                    dispProgMem = new List<string>();
+		/// <summary>
+		/// Allows user to select binary file to decode
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
+				if (openFileDialog.ShowDialog() == DialogResult.OK) {
+					//pass file path to Reader and open it
+					cpu.Rd.fileStr = openFileDialog.FileName;
+					cpu.Rd.OpenFile();
 
-                    foreach(ushort x in cpu.Rd.proMem) {
-                        string add = x.ToString("X4"); //4 digits of hex
-                        add = add.Insert(2, " ");
-                        dispProgMem.Add(add);
+					//after new file is opened reenable button
+					NextBtn.Enabled = true;
+
+					//Display Hex for Program
+					dispProgMem = new List<string>();
+
+					foreach(ushort x in cpu.Rd.proMem) {
+						string add = x.ToString("X4"); //4 digits of hex
+						add = add.Insert(2, " ");
+						dispProgMem.Add(add);
 					}
 
-                    string progDisplay = "";
+					string progDisplay = "";
 
-                    foreach (string s in dispProgMem) {
-                        progDisplay += (s + " ");
-                    }
+					foreach (string s in dispProgMem) {
+						progDisplay += (s + " ");
+					}
 
-                    BinaryFileBox.Text = progDisplay;
+					BinaryFileBox.Text = progDisplay;
 
-                    //Display Code for Program
-                    
+					//TODO: Display Code for Program
+					
 
-                }
-            }
+				}
+			}
 
-            
-            
-        }
+			
+			
+		}
 	}
 }
