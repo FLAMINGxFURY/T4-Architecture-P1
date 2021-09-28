@@ -1,7 +1,7 @@
 ﻿
 namespace InstructionSetSimulation.WinFormsApp
 {
-    partial class Form1
+    partial class InstructionSetDecoder
     {
         /// <summary>
         ///  Required designer variable.
@@ -201,7 +201,7 @@ namespace InstructionSetSimulation.WinFormsApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // InstructionSetDecoder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,8 +222,8 @@ namespace InstructionSetSimulation.WinFormsApp
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "InstructionSetDecoder";
+            this.Text = "Instruction Set Decoder";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
