@@ -7,23 +7,28 @@ using System.Threading.Tasks;
 
 namespace InstructionSetSimulation.Core {
 	public class Reader {
-		public ushort PC;           //Program Counter
-		private ushort currentWord; //current data in reader
+		public ushort PC { get; set; }           //Program Counter
+		public string fileStr { get; set; } = "../../../../Example 1.bin";
+		public List<ushort> proMem;
 		private BinaryReader fileIn;
 		private CPU cpu;
 
 		public Reader(CPU cpuref) {
 			PC = 0;
-			currentWord = 0;
-			fileIn = new BinaryReader(File.Open("../../../../Example 3.bin", FileMode.Open)); //for now we edit the filename here and have no way to select it.
-																						 //The directory is the same as the .sln file
-																						 //Later we can have this come from a file select screen, need a var for that
 			cpu = cpuref;
+
+			//read in file to program memory
+			proMem = new List<ushort>();
+			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
+			while(fileIn.PeekChar() != -1) { //ensure not empty
+				proMem.Add(fileIn.ReadUInt16());
+			}			
 		}
 
 		public ushort GetNextWord() {
 
-			var ret = fileIn.ReadUInt16();
+			var ret = proMem[PC];
+			PC++;
 
 			return ret;
 		}
