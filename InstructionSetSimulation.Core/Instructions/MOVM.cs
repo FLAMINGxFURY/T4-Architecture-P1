@@ -19,5 +19,9 @@ namespace InstructionSetSimulation.Core.Instructions
 			// Move short at address into register
 			reg.Data = BitConverter.ToUInt16(new[] { cpu.Memory[address + 1], cpu.Memory[address] });
 		}
+
+		public override string ToString() {
+			return "MOVM";
+		}
 	}
 }

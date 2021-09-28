@@ -5,5 +5,7 @@ namespace InstructionSetSimulation.Core.Registers
 	{
 		public abstract ushort ID { get; }
 		public ushort Data { get; set; }
+
+		public abstract override string ToString();
 	}
 }

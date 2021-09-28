@@ -17,5 +17,9 @@ namespace InstructionSetSimulation.Core.Instructions
 
 			srcReg1.Data = (ushort)(srcReg1.Data + srcReg2.Data);
 		}
+
+		public override string ToString() {
+			return "ADD";
+		}
 	}
 }

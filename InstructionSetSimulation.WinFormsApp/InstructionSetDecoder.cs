@@ -31,7 +31,10 @@ namespace InstructionSetSimulation.WinFormsApp
         /// <param name="e"></param>
         private void NextBtn_Click(object sender, EventArgs e)
         {
-            //implement
+            //after halt disable the button
+            if (cpu.ParseNextOp()) NextBtn.Enabled = false;
+
+            //highlight change
         }
 
         /// <summary>
@@ -47,6 +50,10 @@ namespace InstructionSetSimulation.WinFormsApp
                     cpu.Rd.fileStr = openFileDialog.FileName;
                     cpu.Rd.OpenFile();
 
+                    //after new file is opened reenable button
+                    NextBtn.Enabled = true;
+
+                    //Display Hex for Program
                     dispProgMem = new List<string>();
 
                     foreach(ushort x in cpu.Rd.proMem) {
@@ -62,6 +69,8 @@ namespace InstructionSetSimulation.WinFormsApp
                     }
 
                     BinaryFileBox.Text = progDisplay;
+
+                    //Display Code for Program
                     
 
                 }

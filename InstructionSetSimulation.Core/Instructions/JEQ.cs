@@ -16,5 +16,9 @@ namespace InstructionSetSimulation.Core.Instructions
 				cpu.Rd.PC += addToPC;
 			}
 		}
+
+		public override string ToString() {
+			return "JEQ";
+		}
 	}
 }

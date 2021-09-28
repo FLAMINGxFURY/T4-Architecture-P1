@@ -24,5 +24,9 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.Memory[mem] = dataAsBytes[1];
 			cpu.Memory[mem + 1] = dataAsBytes[0];
 		}
+
+		public override string ToString() {
+			return "MOVO";
+		}
 	}
 }

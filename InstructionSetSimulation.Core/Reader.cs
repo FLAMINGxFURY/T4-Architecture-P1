@@ -20,7 +20,10 @@ namespace InstructionSetSimulation.Core {
 		}
 
 		public void OpenFile() {
+			//reset values
 			proMem.Clear();
+			PC = 0;
+
 			//read in file to program memory
 			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
 			while (fileIn.PeekChar() != -1) { //ensure not empty

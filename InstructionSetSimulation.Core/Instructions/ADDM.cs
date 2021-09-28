@@ -25,5 +25,9 @@ namespace InstructionSetSimulation.Core.Instructions
 
 			register.Data += data;
 		}
+
+		public override string ToString() {
+			return "ADDM";
+		}
 	}
 }

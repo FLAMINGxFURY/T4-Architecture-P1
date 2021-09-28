@@ -14,5 +14,9 @@ namespace InstructionSetSimulation.Core.Instructions
 			Console.WriteLine("End Reached");
 			cpu.End();
 		}
+
+		public override string ToString() {
+			return "END";
+		}
 	}
 }

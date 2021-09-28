@@ -23,5 +23,9 @@ namespace InstructionSetSimulation.Core.Instructions
 			cpu.EFlags['c'] = DidCarry(reg1.Data, reg2.Data);
 			cpu.EFlags['z'] = result == 0;
 		}
+
+		public override string ToString() {
+			return "CMP";
+		}
 	}
 }

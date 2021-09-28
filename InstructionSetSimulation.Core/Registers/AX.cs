@@ -9,5 +9,9 @@ namespace InstructionSetSimulation.Core.Registers
     public class AX : Register
     {
         public override ushort ID => 0x00;
-    }
+
+		public override string ToString() {
+			return "AX";
+		}
+	}
 }

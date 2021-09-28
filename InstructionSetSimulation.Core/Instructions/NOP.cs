@@ -16,5 +16,9 @@ namespace InstructionSetSimulation.Core.Instructions
 		public override void Execute(ushort operand) {
 			//Do nothing, explicitly :)
 		}
+
+		public override string ToString() {
+			return "NOP";
+		}
 	}
 }

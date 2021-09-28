@@ -15,5 +15,9 @@ namespace InstructionSetSimulation.Core.Instructions
 
 			reg.Data = data;
 		}
+
+		public override string ToString() {
+			return "MOVI";
+		}
 	}
 }

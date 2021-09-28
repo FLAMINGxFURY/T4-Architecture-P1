@@ -15,5 +15,9 @@ namespace InstructionSetSimulation.Core.Instructions
 
 			dest.Data = src.Data;
 		}
+
+		public override string ToString() {
+			return "MOV";
+		}
 	}
 }

@@ -13,5 +13,9 @@ namespace InstructionSetSimulation.Core.Instructions
 			var register = cpu.GetRegister(GetRegister1Code(operand));
 			register.Data += GetImmediate(operand);
 		}
+
+		public override string ToString() {
+			return "ADDI";
+		}
 	}
 }
