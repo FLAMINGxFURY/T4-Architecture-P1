@@ -48,7 +48,17 @@ namespace InstructionSetSimulation.WinFormsApp
                 {
                     filePath = openFileDialog.FileName;
                     var fileStream = openFileDialog.OpenFile();
-                    //implement, may require some minor design changes in Reader class
+
+                    //create CPU instance, passing in filestream from file dialog to create Reader object
+
+
+                    //**We will need some return values for each line of code to print to the display**
+
+                    //loop while there is another line of code to parse
+                        //print out binary instruction in top text box
+                        //print out decoded instruction in bottom text box
+                        //update registers
+
                 }
             }
             
