@@ -10,8 +10,8 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 
 		public override void Execute(ushort operand) {
-			var memory = GetMemoryAddress(operand);
-			cpu.PC.Data = memory;
+			var addToPC = GetImmediate(operand);
+			cpu.Rd.PC += addToPC;
 		}
 	}
 }

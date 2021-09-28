@@ -10,12 +10,11 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 
 		public override void Execute(ushort operand) {
-			var memory = GetMemoryAddress(operand);
+			var addToPC = GetImmediate(operand);
 
-			if (!cpu.EFlags['z'])
-            {
-				cpu.PC.Data = memory;
-            }
+			if (!cpu.EFlags['z']) { //if comparison was NOT zero
+				cpu.Rd.PC += addToPC;
+			}
 		}
 	}
 }
