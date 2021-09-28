@@ -14,9 +14,13 @@ namespace InstructionSetSimulation.WinFormsApp
 {
     public partial class InstructionSetDecoder : Form
     {
+        //Variables
+        CPU cpu;
+
         public InstructionSetDecoder()
         {
             InitializeComponent();
+            cpu = new CPU();
         }
 
         /// <summary>
@@ -36,16 +40,12 @@ namespace InstructionSetSimulation.WinFormsApp
         /// <param name="e"></param>
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string filePath;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    filePath = openFileDialog.FileName;
-                    var fileStream = openFileDialog.OpenFile();
-
-                    //create CPU instance, passing in filestream from file dialog to create Reader object
-
+                    //pass file path to Reader
+                    cpu.Rd.fileStr = openFileDialog.FileName;
 
                     //**We will need some return values for each line of code to print to the display**
 
@@ -55,7 +55,6 @@ namespace InstructionSetSimulation.WinFormsApp
                         //update registers
 
                 }
-            }
             
         }
 	}
