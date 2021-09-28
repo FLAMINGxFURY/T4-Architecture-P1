@@ -23,6 +23,7 @@ namespace InstructionSetSimulation.Core {
 			//reset values
 			proMem.Clear();
 			PC = 0;
+			cpu.endReached = false;
 
 			//read in file to program memory
 			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
