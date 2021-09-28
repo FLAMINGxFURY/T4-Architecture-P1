@@ -17,7 +17,7 @@ namespace InstructionSetSimulation.Core.Instructions
 
 		protected ushort GetRegister1Code(ushort operand)
         {
-			return (ushort)(operand >> 8);
+			return (ushort)(operand >> 10);
 		}
 
 		protected ushort GetRegister2Code(ushort operand)

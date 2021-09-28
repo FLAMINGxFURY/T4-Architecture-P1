@@ -10,10 +10,9 @@ namespace InstructionSetSimulation.Core.Instructions
 		}
 		public override void Execute(ushort operand) {
 			var register = cpu.GetRegister(GetRegister1Code(operand));
+			var memory = GetMemoryAddress(operand);
 
-			//register contains memory location
-			cpu.Memory[register.Data] += GetLowerData(operand);
-			cpu.Memory[register.Data + 1] += GetUpperData(operand);
+			register.Data += cpu.Memory[memory];
 		}
 	}
 }
