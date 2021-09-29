@@ -27,7 +27,7 @@ namespace InstructionSetSimulation.Core {
 
 			//read in file to program memory
 			fileIn = new BinaryReader(File.Open(fileStr, FileMode.Open));
-			while (fileIn.PeekChar() != -1) { //ensure not empty
+			while (fileIn.BaseStream.Position != fileIn.BaseStream.Length) { //ensure not empty
 				proMem.Add(fileIn.ReadUInt16());
 			}
 			fileIn.Close();
