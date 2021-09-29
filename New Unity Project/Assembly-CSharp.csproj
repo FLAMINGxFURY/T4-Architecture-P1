@@ -53,39 +53,39 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVM.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\EFlags.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\AX.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\Instruction.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\BP.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVI.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUBI.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUBM.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\DX.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADD.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\Register.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JNE.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\S1.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\NOP.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\CPU.cs" />
-    <Compile Include="Assets\DataHandler.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\S0.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\SP.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVO.cs" />
-    <Compile Include="Assets\data.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOV.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Reader.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADDI.cs" />
     <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\CMP.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADDM.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\CX.cs" />
-    <Compile Include="Assets\OFButtonHandler.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\END.cs" />
     <Compile Include="Assets\InstructionSetSimulation.Core\Registers\BX.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUB.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JMP.cs" />
-    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JEQ.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVI.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVM.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\DX.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADDI.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\EFlags.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOV.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADDM.cs" />
     <Compile Include="Assets\NextHandler.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUBM.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Reader.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUBI.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\S1.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JEQ.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\SUB.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JNE.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\S0.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\ADD.cs" />
+    <Compile Include="Assets\OFButtonHandler.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\Instruction.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\CPU.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\NOP.cs" />
+    <Compile Include="Assets\DataHandler.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\AX.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\BP.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\MOVO.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\CX.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\SP.cs" />
+    <Compile Include="Assets\data.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\JMP.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Instructions\END.cs" />
+    <Compile Include="Assets\InstructionSetSimulation.Core\Registers\Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -655,23 +655,8 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-      <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -679,26 +664,14 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -711,39 +684,6 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
